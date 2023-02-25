@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="446.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ClienteController">
+   <children>
+      <Label layoutX="103.0" layoutY="31.0" text="Bienvenido">
+         <font>
+            <Font size="16.0" />
+         </font>
+      </Label>
+      <Label layoutX="103.0" layoutY="44.0" text="Cliente UniBanco">
+         <font>
+            <Font name="Cambria" size="30.0" />
+         </font>
+      </Label>
+      <GridPane layoutX="66.0" layoutY="112.0" prefHeight="106.0" prefWidth="317.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="183.9999854221818" minWidth="10.0" prefWidth="132.41817415095576" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="220.65458747296304" minWidth="10.0" prefWidth="158.59999459258805" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label prefHeight="17.0" prefWidth="134.0" text="Numero Identificacion:" />
+            <Label prefHeight="17.0" prefWidth="137.0" text="Numero Cuenta:" GridPane.rowIndex="1" />
+            <Label prefHeight="17.0" prefWidth="134.0" text="Saldo Actual:" GridPane.rowIndex="2" />
+            <Label prefHeight="17.0" prefWidth="137.0" text="Monto a Retirar:" GridPane.rowIndex="4" />
+            <Label fx:id="lblNumeroIdentificacion" alignment="CENTER" prefHeight="17.0" prefWidth="171.0" GridPane.columnIndex="1" />
+            <Label fx:id="lblNumeroCuenta" alignment="CENTER" prefHeight="17.0" prefWidth="181.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label fx:id="lblSaldo" alignment="CENTER" prefHeight="17.0" prefWidth="178.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <HBox prefHeight="100.0" prefWidth="200.0" spacing="27.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+               <children>
+                  <TextField fx:id="tfMontoRetiro" prefHeight="26.0" prefWidth="83.0" />
+                  <Button fx:id="btnRetirar" mnemonicParsing="false" onAction="#onRetirar" text="Retirar" />
+               </children>
+            </HBox>
+            <Label prefHeight="17.0" prefWidth="134.0" text="Transaccion:" GridPane.rowIndex="3" />
+            <Label fx:id="lbDeposito" alignment="CENTER" prefHeight="17.0" prefWidth="178.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+         </children>
+      </GridPane>
+      <TableView fx:id="tableRegistroClientes" layoutX="40.0" layoutY="232.0" prefHeight="127.0" prefWidth="368.0">
+        <columns>
+          <TableColumn fx:id="colFecha" prefWidth="75.0" text="FECHA" />
+          <TableColumn fx:id="colTransaacion" prefWidth="127.41812133789062" text="TRANSACCION" />
+            <TableColumn fx:id="colMonto" prefWidth="89.89100646972656" text="MONTO" />
+            <TableColumn fx:id="colEstado" prefWidth="74.181826494706" text="ESTADO" />
+        </columns>
+      </TableView>
+      <HBox layoutX="365.0" layoutY="366.0" prefHeight="27.0" prefWidth="44.0" spacing="10.0">
+         <children>
+            <Button fx:id="btnSalir" mnemonicParsing="false" onAction="#onSalir" text="Salir" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
